@@ -10,6 +10,8 @@ class Project extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $with = ['type', 'technologies', 'user'];
+
     public function technologies()
     {
         return $this->belongsToMany(Technology::class);
